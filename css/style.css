@@ -1,0 +1,514 @@
+@font-face {
+	font-family: 'DIN Next Shadow';
+	src: url('../fonts/DINNextShadow-Heavy.woff2') format('woff2'), url('../fonts/DINNextShadow-Heavy.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+
+/* Обнуляющий стиль */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+ol li,
+ul li {
+	list-style: none;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+img {
+	vertical-align: top;
+}
+
+html,
+body {
+	height: 100%;
+	font-size: 14px;
+	line-height: 1;
+}
+
+/* -------------- */
+
+body {
+	background-color: #D0D1E3;
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+}
+
+.car {
+	margin: 180px auto;
+	position: relative;
+	width: 100%;
+	height: 600px;
+	background-color: #999DB5;
+	padding: 150px 0px 0px 0px;
+}
+
+.car:hover {
+	box-shadow: 0 0 100px #999DB5;
+}
+
+.car:before,
+.car::after {
+	content: "";
+	position: absolute;
+	border: 20px dashed #fff;
+	width: 100%;
+}
+
+.car:before {
+	top: 3%;
+	left: 0;
+}
+
+.car::after {
+	bottom: 3%;
+	left: 0;
+}
+
+.flasher {
+	height: 30px;
+	width: 30px;
+	background-color: red;
+	margin: 0px auto;
+	border-radius: 50% 50% 0 0;
+	box-shadow: 0px -10px 30px red;
+}
+
+.cartop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0px auto;
+	height: 100px;
+	width: 300px;
+	background-color: #fff;
+	position: relative;
+	border-radius: 20px 0 0 0;
+}
+
+.cartop::before {
+	content: "";
+	border-right: 140px solid transparent;
+	border-bottom: 100px solid #fff;
+	position: absolute;
+	top: 0;
+	right: -140px;
+}
+
+.glass {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	height: 90px;
+	width: 150px;
+	background-color: #9DC2E5;
+	border-radius: 20px 0 0 0;
+	border: 1px solid #18112e;
+}
+
+.glass:before {
+	content: "";
+	position: absolute;
+	right: -263px;
+	top: -1px;
+	width: 249px;
+	border-right: 125px solid transparent;
+	border-bottom: 90px solid #9DC2E5;
+}
+
+.glass:after {
+	content: "";
+	position: absolute;
+	right: -138px;
+	top: -1px;
+	width: 124px;
+	height: 1px;
+	background-color: #18112e;
+}
+
+.glass span {
+	position: absolute;
+	top: 0;
+	left: 162px;
+	background-color: #18112e;
+	width: 1px;
+	height: 100%;
+}
+
+.glass span::before {
+	content: "";
+	position: absolute;
+	top: -37px;
+	left: 194px;
+	background-color: #18112e;
+	width: 1px;
+	height: 176px;
+	transform: rotate(-54.2deg);
+}
+
+.glass span::after {
+	content: "";
+	position: absolute;
+	bottom: -1px;
+	left: 0px;
+	background-color: #18112e;
+	width: 247px;
+	height: 1px;
+}
+
+.carbody {
+	width: 440px;
+	height: 140px;
+	background-color: #fff;
+	margin: 0px auto;
+	position: relative;
+	z-index: 0;
+	left: 70px;
+}
+
+.carbody::before,
+.carbody::after {
+	content: "";
+	height: 140px;
+	position: absolute;
+	top: 0;
+	background-color: #18112e;
+}
+
+.carbody::before {
+	width: 300px;
+	left: -300px;
+	border-radius: 10px 0 0 20px;
+}
+
+.carbody::after {
+	width: 200px;
+	right: -182px;
+	border-radius: 5px 70px 10px 0;
+}
+
+.doorhandle {
+	position: absolute;
+	z-index: 1;
+	top: 20px;
+	left: 10px;
+	height: 25px;
+	width: 40px;
+	background-color: #8F898E;
+	border-radius: 3px;
+}
+
+.doorhandle::before,
+.doorhandle span::before {
+	content: "";
+	position: absolute;
+	top: 8px;
+	left: 0;
+	width: 40px;
+	height: 10px;
+	background-color: #000;
+	border-radius: 2px;
+}
+
+.doorhandle::after {
+	content: "";
+	position: absolute;
+	bottom: -95px;
+	left: -10px;
+	height: 30px;
+	width: 422px;
+	background-color: rgba(170, 166, 163, 0.6);
+}
+
+.doorhandle span {
+	position: absolute;
+	z-index: 1;
+	top: 0px;
+	left: 163px;
+	height: 25px;
+	width: 40px;
+	background-color: #8F898E;
+	border-radius: 3px;
+}
+
+.mirror {
+	position: absolute;
+	z-index: 2;
+	top: -22px;
+	right: 20px;
+	height: 30px;
+	width: 50px;
+	background-color: #444E4C;
+	border-radius: 10px 380% 35px 10px;
+	border: 2px solid #18112e;
+}
+
+.text {
+	position: absolute;
+	top: 52px;
+	left: 7px;
+	z-index: 2;
+	font-family: 'DIN Next Shadow';
+	font-weight: 900;
+	color: #F8C951;
+	font-size: 48px;
+	text-transform: uppercase;
+	letter-spacing: 8px;
+	font-style: italic;
+}
+
+.line {
+	position: absolute;
+	z-index: 1;
+	top: -96px;
+	left: 4px;
+	border: 2px solid #18112e;
+	height: 231px;
+	width: 164px;
+	border-radius: 20px 0 0 0;
+}
+
+.line:before,
+.line:after {
+	content: "";
+	position: absolute;
+	z-index: 2;
+	height: 2px;
+	background-color: #18112e;
+}
+
+.line:before {
+	bottom: -2px;
+	left: 162px;
+	width: 254px;
+}
+
+.line:after {
+	bottom: 227px;
+	left: 162px;
+	width: 130px;
+}
+
+.line span {
+	position: absolute;
+	top: -37px;
+	right: -202px;
+	width: 2px;
+	height: 170px;
+	background-color: #18112e;
+	transform: rotate(-54.5deg);
+}
+
+.light {
+	position: absolute;
+	z-index: 1;
+	bottom: 60px;
+	right: -182px;
+	height: 50px;
+	width: 20px;
+	background-color: #BDCEE4;
+	border-radius: 0 35px 0 0;
+	box-shadow: 10px -10px 20px #BDCEE4;
+}
+
+.light:after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	bottom: 0px;
+	right: 20px;
+	height: 50px;
+	width: 10px;
+	background-color: #B16A41;
+	border-radius: 5px 0 0 0;
+}
+
+.lightbackside {
+	position: absolute;
+	z-index: 2;
+	left: -300px;
+	bottom: 70px;
+	height: 55px;
+	width: 30px;
+	background-color: red;
+	border-radius: 0 10px 10px 0;
+	box-shadow: 0 0 20px red;
+}
+
+.lightbackside::before {
+	content: "";
+	position: absolute;
+	top: 27px;
+	left: 0;
+	width: 30px;
+	height: 13px;
+	background-color: #E9E4ED;
+	box-shadow: 0 0 20px #E9E4ED;
+}
+
+.bumper {
+	position: absolute;
+	z-index: 1;
+	right: -188px;
+	bottom: 0;
+	width: 59px;
+	border-left: 25px solid transparent;
+	border-top: 60px solid #505050;
+	border-radius: 20px 10px 15px 75px;
+}
+
+.bumperbackside {
+	content: "";
+	position: absolute;
+	top: 100px;
+	left: -310px;
+	height: 40px;
+	width: 60px;
+	background-color: #505050;
+	border-radius: 10px 10px 5px 30px;
+}
+
+.carwheel {
+	position: absolute;
+	z-index: 1;
+	right: -120px;
+	bottom: -60px;
+	height: 130px;
+	width: 130px;
+	background-color: #505050;
+	border-radius: 50%;
+}
+
+.carwheel:first-child {
+	right: -120px;
+	bottom: -60px;
+}
+
+.carwheel:last-child {
+	left: -180px;
+	bottom: -60px;
+}
+
+.carwheel:before {
+	content: "";
+	position: absolute;
+	top: 17px;
+	left: 17px;
+	height: 96px;
+	width: 96px;
+	background-color: #000;
+	display: inline-block;
+	border-radius: 50%;
+}
+
+.carwheel::after {
+	content: "";
+	position: absolute;
+	top: 38px;
+	left: 38px;
+	height: 54px;
+	width: 54px;
+	background-color: #8C8B91;
+	display: inline-block;
+	border-radius: 50%;
+}
+
+.carwheel span {
+	position: absolute;
+	z-index: 2;
+	top: 47px;
+	left: 47px;
+	height: 36px;
+	width: 36px;
+	background-color: #505050;
+	border-radius: 50%;
+}
+
+.carwheel span::before {
+	content: "";
+	position: absolute;
+	top: 12px;
+	left: 8px;
+	height: 20px;
+	width: 20px;
+	background-color: #fff;
+	border-radius: 50%;
+}
+
+.carwheel span::after {
+	content: "";
+	position: absolute;
+	top: 7px;
+	left: 7px;
+	height: 22px;
+	width: 22px;
+	background-color: #505050;
+	border-radius: 50%;
+}
+
+.sheriff {
+	background: url('../img/sheriff-pngrepo-com.png') 0 0 / 100% no-repeat;
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	z-index: 1;
+	top: 25px;
+	right: 45px;
+
+}
+
+.sheriff::before {
+	content: "";
+	position: absolute;
+	top: -19px;
+	left: -565px;
+	background: url('../img/image_sher.png') 0 0 / 100% no-repeat;
+	height: 134px;
+	width: 150px;
+}
+
+.sheriff::after {
+	content: "";
+	position: absolute;
+	z-index: 0;
+	top: -115px;
+	left: -257px;
+	background: url('../img/criminal.png') 0 0 / 100% no-repeat;
+	height: 90px;
+	width: 90px;
+	opacity: 0;
+	transition: 1s linear;
+}
+
+.sheriff:hover.sheriff::after {
+	opacity: 1;
+}
